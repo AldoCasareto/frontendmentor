@@ -2,9 +2,12 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
+  const [toggle, setToggle] = useState(false);
+
   return (
     <div className='container'>
       <Head>
@@ -14,29 +17,50 @@ const Home: NextPage = () => {
       </Head>
       <header className='primary-header'>
         <div className='container'>
-          <Link href='/'>
-            <img src='logo.svg' alt='logo' />
-          </Link>
-          <nav className='primary-nav'>
-            <ul aria-label='Primary' role='list' className='nav-list'>
-              <li>
-                <Link href='/'>Pricing</Link>
-              </li>
-              <li>
-                <Link href='/'>Product</Link>
-              </li>
-              <li>
-                <Link href='/'>About Us</Link>
-              </li>
-              <li>
-                <Link href='/'>Careers</Link>
-              </li>
-              <li>
-                <Link href='/'>Community</Link>
-              </li>
-            </ul>
-          </nav>
-          <button className='button'>Get Started</button>
+          <div className='nav-wrapper'>
+            <Link href='/'>
+              <img src='logo.svg' alt='logo' />
+            </Link>
+            <button
+              onClick={() => setToggle((current) => !current)}
+              aria-controls='primary-navigation'
+              className='mobile-nav-toggle'
+              aria-expanded={toggle}
+            >
+              <img
+                className='icon-hamburger'
+                src={`${toggle ? 'icon-close.svg' : 'icon-hamburger.svg'}`}
+                alt=''
+                aria-hidden='true'
+              />
+              <span className='visually-hidden'>Menu</span>
+            </button>
+            <nav
+              className={`${toggle ? 'opened' : ''} primary-navigation `}
+              id='primary-navigation'
+            >
+              <ul aria-label='Primary' role='list' className='nav-list'>
+                <li>
+                  <Link href='/'>Pricing</Link>
+                </li>
+                <li>
+                  <Link href='/'>Product</Link>
+                </li>
+                <li>
+                  <Link href='/'>About Us</Link>
+                </li>
+                <li>
+                  <Link href='/'>Careers</Link>
+                </li>
+                <li>
+                  <Link href='/'>Community</Link>
+                </li>
+              </ul>
+            </nav>
+            <button style={{ display: 'none' }} className='button'>
+              Get Started
+            </button>
+          </div>
         </div>
       </header>
       <main>

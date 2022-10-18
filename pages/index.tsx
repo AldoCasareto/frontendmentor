@@ -57,9 +57,7 @@ const Home: NextPage = () => {
                 </li>
               </ul>
             </nav>
-            <button style={{ display: 'none' }} className='button'>
-              Get Started
-            </button>
+            <button className='button display-md-inline-flex display-sm-none'>Get Started</button>
           </div>
         </div>
       </header>

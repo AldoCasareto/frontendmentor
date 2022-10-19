@@ -64,7 +64,7 @@ const Home: NextPage = () => {
       <main>
         <section className='padding-block-900'>
           <div className='even-columns'>
-            <div>
+            <div className='flow'>
               <h1 className='fs-primary-heading fw-bold'>
                 Bring everyone together to build better products.
               </h1>
@@ -81,7 +81,7 @@ const Home: NextPage = () => {
         </section>
         <section className='container padding-block-900'>
           <div className='even-columns'>
-            <div>
+            <div className='flow'>
               <h2 className='fs-secondary-heading fw-bold'>What&apos;s different about Manage?</h2>
               <p>
                 Manage provides all the functionality your team needs, without the complexity. Our
@@ -89,7 +89,7 @@ const Home: NextPage = () => {
               </p>
             </div>
             <div>
-              <ul className='numbered-items' role='list'>
+              <ul className='numbered-items flow' role='list'>
                 <li>
                   <h3 className='fs-600 fw-bold'>Track company-wide progress</h3>
                   <p>
@@ -119,13 +119,15 @@ const Home: NextPage = () => {
           </div>
         </section>
         <section className='carousel padding-block-700'>
-          <h2 className='fs-secondary-heading fw-bold'>What they said</h2>
-          <button className='button'>Get Started</button>
+          <div className='flow'>
+            <h2 className='fs-secondary-heading fw-bold'>What they said</h2>
+            <button className='button'>Get Started</button>
+          </div>
         </section>
         <section className='cta | bg-accent-400 text-neutral-100 padding-block-700'>
           <div className='container'>
             <div className='even-columns'>
-              <div>
+              <div className='flow'>
                 <p className='fs-secondary-heading fw-bold'>Simplify how your team works today.</p>
               </div>
               <div>
@@ -140,7 +142,7 @@ const Home: NextPage = () => {
       <footer className='padding-block-700 bg-neutral-900 text-neutral-100'>
         <div className='container'>
           <div className='even-columns'>
-            <div>
+            <div className='flow'>
               <ul role='list' aria-label='social links'>
                 <li>
                   <Link aria-label='facebook' href='/'>

@@ -360,6 +360,10 @@ body {
   margin-inline: auto;
 }
 
+.flow > * + * {
+  margin-top: 2em;
+}
+
 .even-columns {
   display: grid;
   gap: 1rem;
